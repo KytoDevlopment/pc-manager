@@ -1,33 +1,29 @@
-from colorama import init, Fore
 from time import sleep
 from os import listdir, system, mkdir, chdir, rename
 from os.path import isdir
+from pystyle import *
 from pycenter import center
-
-# PC SORTER
-init(convert=True)
-
-# CLEAR
 
 
 def clear(): return system("cls")
 
 
-print(center(f"""{Fore.LIGHTBLUE_EX}
-██████   ██████     ███    ███  █████  ███    ██  █████   ██████  ███████ ██████  
-██   ██ ██          ████  ████ ██   ██ ████   ██ ██   ██ ██       ██      ██   ██ 
-██████  ██          ██ ████ ██ ███████ ██ ██  ██ ███████ ██   ███ █████   ██████  
-██      ██          ██  ██  ██ ██   ██ ██  ██ ██ ██   ██ ██    ██ ██      ██   ██ 
-██       ██████     ██      ██ ██   ██ ██   ████ ██   ██  ██████  ███████ ██   ██ 
+print(Colorate.Vertical(Colors.green_to_yellow, center("""
+██████   ██████     ███    ███  █████  ███    ██  █████   ██████  ███████ ██████
+██   ██ ██          ████  ████ ██   ██ ████   ██ ██   ██ ██       ██      ██   ██
+██████  ██          ██ ████ ██ ███████ ██ ██  ██ ███████ ██   ███ █████   ██████
+██      ██          ██  ██  ██ ██   ██ ██  ██ ██ ██   ██ ██    ██ ██      ██   ██
+██       ██████     ██      ██ ██   ██ ██   ████ ██   ██  ██████  ███████ ██   ██
 \n
-"""))
-print(center(f"{Fore.LIGHTYELLOW_EX}[1] PC SORTER          [2] PC OPTIMIZER"))
+""")))
+
+print(center("[1] PC SORTER             [2] PC OPTIMIZER"))
 
 
 pcchoice = int(input())
 
 if pcchoice == 1:
-    print(f"{Fore.LIGHTYELLOW_EX}Directory to clean ?")
+    print("Directory to clean ?")
     directoryclean = str(input())
     chdir(directoryclean)
     files = listdir()
